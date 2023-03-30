@@ -1,0 +1,38 @@
+class Students:
+    def __init__(self):
+        self.id = int(input('Hay nhap id cua sinh vien: '))
+        self.name = input('Hay nhap ten sinh vien: ') 
+        self.grades = {}
+        self.GPA = 0
+
+    def print_infor(self):
+        print(f'name: {student_1.name}') 
+        print(f'id: {student_1.id}')
+        for subject in self.grades:
+            print(f'{subject}: {self.grades[subject]}')
+        print(f'student gpa: {self.GPA}')
+    
+    def calculate_GPA(self):
+        total = 0
+        for subject in self.grades:
+            total += self.grades[subject]
+        self.GPA = total / len(self.grades)
+
+    def add_new_subject(self):
+        so_mon = int(input('Hay nhap so mon moi: '))
+        for i in range(so_mon):
+            new_subject = input('Hay nhap them mon hoc moi: ')
+            self.grades[new_subject] = float(input(f'Hay nhap diem mon hoc moi them {new_subject}: '))
+    
+    def graduate(self):
+        if self.GPA /10 *4 >= 2.5:
+            print('ban du dieu kien tot nghiep')
+        else:
+            print('ban khong du dieu kien de tot nghiep')
+
+student_1 = Students()
+student_1.print_infor()
+student_1.add_new_subject()
+student_1.calculate_GPA()
+student_1.graduate()
+
